@@ -1,7 +1,26 @@
 :root {
-	--background: white;
-	--foreground: black;
+	--background: #5D535E ;
+	--foreground: #9A9EAB;
+
+	--body-width: 100vw;
 	
-	--font-family: "Arial";
-	--font-size: 20px;
+	--font-family: 'ZCOOL QingKe HuangYou', monospace;
+	--font-size: 16pt;
+	--font-size-title: 24pt;
+
+	--title-color: white;
+	--colored-details: #BAE166;
+
+	--line-height: 1.5;
+
+	--padding-small: 5px;
+	--padding-big: 20px;
+	--padding-bottom-small: 10px;
+	--padding-bottom-big: 20px;
+	
+	--margin-top-big: 20px;
+	--margin-bottom-small: 10px;
+	--margin-left-right: 35%;
+
+	--border-radius: 10px;
 }
