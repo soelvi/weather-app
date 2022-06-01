@@ -90,7 +90,7 @@ export default {
 				return true; 
 			}	else	{
 				if(response.status === 404) {
-					throw new Error('Url ikke funnet..');
+					throw new Error('ERROR 404 - Url ikke funnet..');
 				}
 				if(response.status === 401) {
 					throw new Error('Ikke autorisert');
