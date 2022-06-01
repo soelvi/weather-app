@@ -1,5 +1,6 @@
 <template>
-	<main>
+	<p v-if="error" class="errors">{{ error }}</p>
+	<main v-if="!error">
 		<p class="weather__title">  {{ title }} </p>
 		<div class="weather__location">
 			<select v-model="currentCity">
@@ -92,12 +93,12 @@ export default {
 					throw new Error('Url ikke funnet..');
 				}
 				if(response.status === 401) {
-					throw new Error('Ikke autorisert ');
+					throw new Error('Ikke autorisert');
 				}
 				if(response.status > 500) {
 					throw new Error('Server error!');
 				}
-				throw new Error (' Woops, noe gikk galt!');
+				throw new Error ('Woops, noe gikk galt!');
 			}
 		},
 
