@@ -3,6 +3,7 @@
 		<p class="weather__title">  {{ title }} </p>
 		<div class="weather__location">
 			<select v-model="currentCity">
+				<!-- v-for fetches the data for one chosen city -->
 				<option v-for="city in allCities" :key="city">
 					{{ city }}
 				</option>
@@ -14,8 +15,8 @@
 		<div class="weather_days">
 			<section class="weather__today">
 				<p class="weather__days--title"> today: </p> 
+					<!-- v-if displays random weather icon every time page is reloaded -->
 				  <p v-if="selectedImage"><img :src="selectedImage" alt="icon skies" class="weather__windIcon-bigger"></p>
-					<!-- display random weather icon every time page is reloaded -->
 				<div>{{ weather.temperature }} </div>
 				<div>{{ weather.description }} </div>
 					<img src="/public/images/fluent_weather-duststorm-20-regular.png" alt="icon wind" class="weather__windIcon-smaller">
@@ -72,10 +73,10 @@ export default {
 
 	methods: {
 		async fetchData() {
-			const url = `https://goweather.herokuapp.com/weather/${this.currentCity}`;
+			const url = `https://goweather.herokuapp.com/weather/${this.currentCity}`; // currentCity is chosen in menu from data allCities
 			const response = await fetch(url);
 			try {
-				await this.handleResponse(response);
+				await this.handleResponse(response); 
 			} catch (error) {
 				this.error = error.message;
 			}
@@ -101,7 +102,7 @@ export default {
 		},
 
 		randomIcon(icons) {
-      return icons[Math.floor(Math.random()*icons.length)]; //returns random icon from images array passed to this function
+      	return icons[Math.floor(Math.random()*icons.length)]; //returns random icon from images array passed to this function
     	}
 	}
 }
